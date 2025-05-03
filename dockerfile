@@ -9,10 +9,10 @@ COPY package*.json ./
 
 # Install dependencies
 RUN npm install
+RUN npm install newrelic
 
 # Copy the app source code
 COPY . .
-
 # Expose the app port
 EXPOSE 3000
 
