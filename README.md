@@ -1,9 +1,7 @@
-CI/CD Pipeline with Docker, GitHub Actions, and Terraform
-
+CI/CD Pipeline with Docker, GitHub Actions, and Terraform:
     This repository demonstrates how to set up a CI/CD pipeline using GitHub Actions to build and deploy a Dockerized Node.js application. The pipeline automates linting, building, and pushing the Docker image to Docker Hub. The application can then be deployed using Terraform.
 
 Prerequisites:
-
     GitHub Repository: Make sure you have access to this repository or forked it to your account.
 
     Docker: Install Docker on your local machine to build and run containers.
@@ -11,7 +9,7 @@ Prerequisites:
     Docker Hub Account: You need a Docker Hub account to push and store the Docker image.
 
     Terraform: Ensure Terraform is installed on your local machine to deploy the application.
-
+    
     New Relic Account (Optional): To monitor and log the application performance.
 
 Steps to Set Up and Run the Pipeline
@@ -46,26 +44,7 @@ Building the Docker image from the Dockerfile.
 Pushing the Docker image to Docker Hub.
 
 5. Customize the Dockerfile
-    Ensure the Dockerfile in your repository is set up correctly for your application. Here’s an example Dockerfile for a Node.js app:
-
-    # Use official Node.js image as base
-    FROM node:18
-
-    # Set the working directory
-    WORKDIR /usr/src/app
-
-    # Install application dependencies
-    COPY package*.json ./
-    RUN npm install
-
-    # Copy the application code
-    COPY . .
-
-    # Expose the port the app runs on
-    EXPOSE 3000
-
-    # Start the application
-    CMD ["node", "index.js"]
+    Ensure the Dockerfile in your repository is set up correctly for your application.
 
 6. Configure Terraform Files
     You need to configure Terraform and add required vars to deploy the application. If you’re deploying to a local Docker setup.
