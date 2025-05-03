@@ -1,0 +1,1 @@
+image_name = "minaezzat0/node-hello:latest"
