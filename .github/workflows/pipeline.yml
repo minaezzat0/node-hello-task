@@ -6,10 +6,6 @@ on:
 jobs:
   build_and_push_docker_image:
     runs-on: ubuntu-latest
-    env:
-        TF_VAR_docker_username: ${{ secrets.DOCKER_USERNAME }}
-        TF_VAR_docker_password: ${{ secrets.DOCKER_PASSWORD }}
-        TF_VAR_image_name: ${{ secrets.DOCKER_USERNAME }}/node-hello:latest
 
     steps:
       - uses: actions/checkout@v4
@@ -37,16 +33,3 @@ jobs:
 
       - name: Push the Docker image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/node-hello:latest
-
-      - name: Install Terraform
-        uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_version: 1.9.8  # or whatever version you're using
-
-      - name: Terraform Init
-        working-directory: terraform
-        run: terraform init
-
-      - name: Terraform Apply
-        working-directory: terraform
-        run: terraform apply -auto-approve
