@@ -1,11 +1,15 @@
-import { defineConfig } from "eslint/config";
+// eslint.config.cjs
+const { FlatCompat } = require('@eslint/eslintrc');
+const compat = new FlatCompat();
 
-export default defineConfig([
-	{
-		files: ["**/*.js", "**/*.cjs", "**/*.mjs"],
-		rules: {
-			"prefer-const": "warn",
-			"no-constant-binary-expression": "error",
-		},
-	},
-]);
+module.exports = compat.config({
+  overrides: [
+    {
+      files: ["**/*.js", "**/*.cjs", "**/*.mjs"],
+      rules: {
+        "prefer-const": "warn",
+        "no-constant-binary-expression": "error",
+      },
+    },
+  ],
+});
