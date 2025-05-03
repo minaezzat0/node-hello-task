@@ -1,24 +1,25 @@
+# Ignore macOS system files
 .DS_Store
 
-# Ignore everything in any .terraform folder
-./terraform/.terraform/
+# Ignore Terraform working directory
+terraform/.terraform/
 
 # Ignore Terraform state files
-./terraform/*.tfstate
-./terraform/*.tfstate.*
+terraform/terraform.tfstate
+terraform/terraform.tfstate.*
 
-# Ignore crash logs
+# Crash log files
 terraform/crash.log
 
-# Ignore override files
-./terraform/override.tf
-./terraform/override.tf.json
-./terraform/*_override.tf
-./terraform/*_override.tf.json
+# Terraform override files
+terraform/override.tf
+terraform/override.tf.json
+terraform/*_override.tf
+terraform/*_override.tf.json
 
-# Optionally ignore tfvars (uncomment if you have sensitive vars)
+# Optionally ignore tfvars if containing secrets
 # terraform/*.tfvars
 
-# Ignore Terraform CLI configuration files
-./terraform/.terraformrc
-./terraform/terraform.rc
+# Terraform CLI config
+terraform/.terraformrc
+terraform/terraform.rc
