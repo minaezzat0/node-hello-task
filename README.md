@@ -1,14 +1,14 @@
-CI/CD Pipeline with Docker, GitHub Actions, and Terraform:
+# CI/CD Pipeline with Docker, GitHub Actions, and Terraform:
 
 This repository demonstrates how to set up a CI/CD pipeline using GitHub Actions to build and deploy a Dockerized Node.js application. The pipeline automates linting, building, and     pushing the Docker image to Docker Hub. The application can then be deployed using Terraform.
 
 Prerequisites:
 
-    1- GitHub Repository: Make sure you have access to this repository or forked it to your account.
-    2- Docker: Install Docker on your local machine to build and run containers.
-    3- Docker Hub Account: You need a Docker Hub account to push and store the Docker image.
-    4- Terraform: Ensure Terraform is installed on your local machine to deploy the application.
-    5- New Relic Account (Optional): To monitor and log the application performance.
+		GitHub Repository: Make sure you have access to this repository or forked it to your account.
+		Docker: Install Docker on your local machine to build and run containers.
+		Docker Hub Account: You need a Docker Hub account to push and store the Docker image.
+ 		Terraform: Ensure Terraform is installed on your local machine to deploy the application.
+		New Relic Account (Optional): To monitor and log the application performance.
 Steps to Set Up and Run the Pipeline
 1. Fork the Repository (Optional)
 If you haven’t already, fork this repository to your GitHub account.
@@ -44,7 +44,6 @@ The CI/CD pipeline is already set up in .github/workflows/pipeline.yml. This pip
 
 7. Push the Code to GitHub
     Once you've set up your GitHub secrets, Dockerfile, and Terraform configuration, commit and push your changes:
-
         git add .
         git commit -m "Set up GitHub Actions pipeline and Terraform deployment"
         git push origin main
@@ -71,7 +70,6 @@ The CI/CD pipeline is already set up in .github/workflows/pipeline.yml. This pip
 
     Run terraform apply to deploy the container on your local machine (or any other cloud provider of your choice).
 
-
         terraform init
         terraform apply
         You should now have your container running locally and you could check by visiting http://localhost:3000 from your browser
@@ -84,17 +82,14 @@ The CI/CD pipeline is already set up in .github/workflows/pipeline.yml. This pip
 
         terraform destroy
 
-Additional Notes:
+### Additional Notes:
 
 New Relic Logs: By default, New Relic doesn’t send logs from Node.js applications unless you configure log forwarders. If you need to send logs, you might want to set up New Relic’s log forwarding using Fluent Bit or another log aggregation tool.
 
 Cloud Deployment: If you want to deploy to a cloud service like AWS, Google Cloud, or Azure, you can update the Terraform configuration to use services like ECS, GKE, or AKS, depending on your chosen cloud provider.
 
-Troubleshooting:
+### Troubleshooting:
 
 Pipeline fails to run: Check the Actions tab in GitHub for detailed logs of the pipeline execution.
-
 Docker image not pushed: Verify that your Docker Hub credentials in the GitHub secrets are correct.
-
 Application not running: Check the Terraform logs for any errors during the deployment process.
-
