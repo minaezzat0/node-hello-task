@@ -1,24 +1,24 @@
 .DS_Store
 
 # Ignore everything in any .terraform folder
-terraform/.terraform/
+./terraform/.terraform/
 
 # Ignore Terraform state files
-terraform/*.tfstate
-terraform/*.tfstate.*
+./terraform/*.tfstate
+./terraform/*.tfstate.*
 
 # Ignore crash logs
 terraform/crash.log
 
 # Ignore override files
-terraform/override.tf
-terraform/override.tf.json
-terraform/*_override.tf
-terraform/*_override.tf.json
+./terraform/override.tf
+./terraform/override.tf.json
+./terraform/*_override.tf
+./terraform/*_override.tf.json
 
 # Optionally ignore tfvars (uncomment if you have sensitive vars)
 # terraform/*.tfvars
 
 # Ignore Terraform CLI configuration files
-terraform/.terraformrc
-terraform/terraform.rc
+./terraform/.terraformrc
+./terraform/terraform.rc
