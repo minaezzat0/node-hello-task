@@ -11,11 +11,12 @@ resource "docker_container" "app" {
     external = 3000
   }
 
-  env = {
-    NEW_RELIC_LICENSE_KEY = var.new_relic_license_key
-    NEW_RELIC_APP_NAME    = var.new_relic_app_name
-    NODE_ENV              = var.node_env
-  }
+
+  env = [
+    "NEW_RELIC_LICENSE_KEY=${var.new_relic_license_key}",
+    "NEW_RELIC_APP_NAME=${var.new_relic_app_name}",
+    "NODE_ENV=${var.node_env}"
+  ]
 
   restart = "always"
 }
